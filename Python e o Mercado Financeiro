@@ -1,19 +1,26 @@
-# Capítulo 1 - Exercício 8
+     # Capítulo 1 - Exercício 8
 
 import xlrd as xl
 import numpy as ny
 import matplotlib.pyplot as plt
 
-# abrindo o workbook
+    # abrindo o workbook
+    
 wb1 = xl.open_workbook("GGBR4.SA.xls")
 wb2 = xl.open_workbook("VALE3.SA.xls")
-# abrindo as planilhas
+
+    # abrindo as planilhas
+    
 p1 = wb1.sheet_by_index(0)
 p2 = wb2.sheet_by_index(0)
-# criando as listas
+
+    # criando as listas
+    
 gerdau4 = p1.col_values(4)[1:]
 vale3 = p2.col_values(4)[1:]
-# criando Xs e Ys para plotar
+
+    # criando Xs e Ys para plotar
+    
 qtd_dias = len(gerdau4)
 x = range(qtd_dias)
 y1 = ny.array(gerdau4)
@@ -22,7 +29,9 @@ retorno_vale3 = (y2[1:qtd_dias] - y2[0:qtd_dias-1])/y2[0:qtd_dias-1]*100
 retorno_gerdau4 = (y1[1:qtd_dias] - y1[0:qtd_dias-1])/y1[0:qtd_dias-1]*100
 qtd_retornos = len(retorno_gerdau4)
 x2 = range(qtd_retornos)
-# plotando
+
+    # plotando
+    
 plt.subplot(221);plt.plot(x, y1); plt.title("Histórico de Preço - GGBR4"); plt.xlabel("Setembro - 2019"); plt.ylabel("Preço"); plt.grid()
 plt.xticks(x, range(0, qtd_dias, 1))
 plt.subplot(222);plt.plot(x, y2); plt.title("Histórico de Preço - VALE3"); plt.xlabel("Setembro - 2019"); plt.ylabel("Preço"); plt.grid()
