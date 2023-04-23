@@ -1,0 +1,3 @@
+- 👋 Hi, I’m @Lortheus
+- 👀 I’m interested in Data Analisys
+- 🌱 I’m currently learning Python
